@@ -9,12 +9,12 @@ export const TodoList = React.memo(() => {
     setTasksRemaining(todoAppData.filter(task => !task.completed).length) 
   },[todoAppData]);
   return (
-    <ul>
+    <ul className="list-group">
       {taskRemaining ?  <h2>Incomplete Items - {taskRemaining}</h2> : ""}
       {
         todoAppData && todoAppData.length !== 0 ? todoAppData.map((item) => (
           <TodoListItem todoData={item} key={item.id}/>
-        )) : <h6>No Data Found</h6>
+        )) : <h6 className='mt-3 text-center'>No Todo Item Found</h6>
       }
     </ul>
   )

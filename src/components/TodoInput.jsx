@@ -17,9 +17,12 @@ export const TodoInput = React.memo(() => {
   
     return (
       <div>
-          <h1>Todo App</h1>
-          <input type="text" placeholder='Enter todo ...' value={inputValue} onChange={(e) => setInputValue(e.target.value)}/>
-          <button onClick={addTodo}>Add Todo</button>
+          <h1 className='text-center'>Todo App</h1>
+         <div className="mb-3">
+            <label htmlFor="todoInput" className="form-label">Todo Input</label>
+            <input className="form-control" id="todoInput" type="text" placeholder='Enter Todo Item ...' value={inputValue} onChange={(e) => setInputValue(e.target.value)}/>
+         </div>
+          <button className='btn btn-success rounded-0 border-0' onClick={addTodo}>Add Todo</button>
       </div>
     )
   })
