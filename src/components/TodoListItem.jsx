@@ -5,9 +5,9 @@ import { changeTodoItemStatus } from '../redux/todoSlice';
 export const TodoListItem = React.memo(({todoData}) => {
     const dispatch = useDispatch();
     const { id, todoItem, completed } = todoData;
-    const changeStatus = useCallback((e,id) => {
+    const changeStatus = (e,id) => {
       dispatch(changeTodoItemStatus({id,todoStatus:e.target.checked}))
-    },[])
+    }
     return (
       <li key={id}>
           <input type="checkbox" checked={completed} onChange={(e) => changeStatus(e,id)}/>

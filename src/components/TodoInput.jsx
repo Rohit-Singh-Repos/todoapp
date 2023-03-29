@@ -1,4 +1,4 @@
-import React,{useCallback, useState} from 'react'
+import React,{useState} from 'react'
 import { useDispatch } from 'react-redux'
 import { addTodoItem } from '../redux/todoSlice'
 
@@ -6,14 +6,14 @@ export const TodoInput = React.memo(() => {
     const [inputValue, setInputValue] = useState("")
     const dispatch = useDispatch();
   
-    const addTodo = useCallback(() => {
+    const addTodo = () => {
         if(inputValue !== ""){
             dispatch(addTodoItem(inputValue));
             setInputValue("")
         }else{
             alert("Please enter some input")
         }
-    },[inputValue])
+    }
   
     return (
       <div>
