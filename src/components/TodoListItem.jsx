@@ -10,8 +10,8 @@ export const TodoListItem = React.memo(({todoData}) => {
     }
     
     return (
-      <li key={id}>
-          <input type="checkbox" checked={completed} onChange={(e) => changeStatus(e,id)}/>
+      <li className="list-group-item" key={id}>
+          <input className='form-check-input me-2' type="checkbox" checked={completed} onChange={(e) => changeStatus(e,id)}/>
           <span>{todoItem} {completed ? "(Task Done)" : "(Task Incomplete)"}</span>
       </li>
     )
