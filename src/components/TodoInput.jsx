@@ -6,6 +6,7 @@ export const TodoInput = React.memo(() => {
     const [inputValue, setInputValue] = useState("");
     const [taskRemaining, setTasksRemaining] = useState(null);
     const { todoAppData } = useSelector((state) => state.todoAppSliceReducer);
+    
     useEffect(() => { 
         setTasksRemaining(todoAppData.filter(task => !task.completed).length) 
     },[todoAppData]);
